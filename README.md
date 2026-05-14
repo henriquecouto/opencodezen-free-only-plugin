@@ -6,10 +6,14 @@ When loaded, it fetches the list of free models from `https://opencode.ai/zen/v1
 
 ## Usage
 
-Add to your `opencode.json`:
+Move `opencodezen-free-only.ts` to `~/.config/opencode/plugins/`, then add to your `opencode.json`:
 
 ```json
 {
-  "plugins": ["/path/to/opencodezen-free-only"]
+  "provider": {
+    "opencode": {}
+  }
 }
 ```
+
+The `provider.opencode` object must exist (even if empty) so the plugin can add the model whitelist to it.
